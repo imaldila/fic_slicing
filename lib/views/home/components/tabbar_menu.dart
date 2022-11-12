@@ -5,11 +5,14 @@ import '../../../constants.dart';
 class TabBarMenu extends StatelessWidget {
   const TabBarMenu({
     Key? key,
+    required this.controller,
   }) : super(key: key);
+  final TabController controller;
 
   @override
   Widget build(BuildContext context) {
     return TabBar(
+      controller: controller,
       isScrollable: true,
       indicatorColor: kBrownColor,
       splashBorderRadius: BorderRadius.circular(20),
