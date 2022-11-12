@@ -34,11 +34,14 @@ class DetailFurniture extends StatelessWidget {
             top: 0,
             left: 0,
             right: 0,
-            child: Image.asset(
-              furniture.image,
-              fit: BoxFit.cover,
-              height: height * 0.6,
-              width: double.infinity,
+            child: Hero(
+              tag: furniture.image,
+              child: Image.asset(
+                furniture.image,
+                fit: BoxFit.cover,
+                height: height * 0.6,
+                width: double.infinity,
+              ),
             ),
           ),
           Positioned(

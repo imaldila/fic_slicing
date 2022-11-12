@@ -89,15 +89,13 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                   itemCount: Furniture.furnitures.length,
                   itemBuilder: (context, index) {
                     var furniture = Furniture.furnitures[index];
-                    return InkWell(
+                    return FurnitureCard(
                       onTap: () => Navigator.pushNamed(
                         context,
                         Routes.detailFurniture,
                         arguments: furniture,
                       ),
-                      child: FurnitureCard(
-                        furniture: furniture,
-                      ),
+                      furniture: furniture,
                     );
                   },
                 ),
