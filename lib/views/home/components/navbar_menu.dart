@@ -19,7 +19,8 @@ class NavBarMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return BottomNavigationBar(
       type: BottomNavigationBarType.fixed,
-      fixedColor: kWhiteColor,
+      elevation: 16,
+      backgroundColor: kWhiteColor,
       unselectedItemColor: kBrownColor,
       showSelectedLabels: false,
       showUnselectedLabels: false,
@@ -30,7 +31,7 @@ class NavBarMenu extends StatelessWidget {
           return navBarIcon(
             label: navIcon.label,
             icon: navIcon.icon,
-            color: _selectedIndex == i ? kBrownColor : kBackgroundColor,
+            color: _selectedIndex == i ? kBrownColor : kWhiteColor,
             iconColor: _selectedIndex == i ? kBackgroundColor : kBrownColor,
           );
         },

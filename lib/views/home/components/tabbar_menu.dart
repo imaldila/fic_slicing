@@ -16,14 +16,15 @@ class TabBarMenu extends StatelessWidget {
       isScrollable: true,
       indicatorColor: kBrownColor,
       splashBorderRadius: BorderRadius.circular(20),
-      labelPadding: const EdgeInsets.symmetric(horizontal: 22),
+      labelPadding:
+          const EdgeInsets.symmetric(horizontal: khorizontalPadding + 8),
       indicator: BoxDecoration(
         color: kBrownColor,
         borderRadius: BorderRadius.circular(20),
       ),
       labelStyle: const TextStyle(fontSize: 12),
       unselectedLabelColor: kBrownColor,
-      padding: const EdgeInsets.only(left: 16.0),
+      padding: const EdgeInsets.only(left: khorizontalPadding),
       tabs: const [
         Tab(
           text: 'All',

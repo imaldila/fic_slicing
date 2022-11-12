@@ -43,7 +43,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
             children: [
               const HeaderMenu(),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
+                padding: EdgeInsets.symmetric(horizontal: khorizontalPadding, vertical: 30.0),
                 child: Text(
                   'Discover the most modern furniture',
                   style: TextStyle(
@@ -56,7 +56,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
               TabBarMenu(controller: _tabController),
               const Padding(
                 padding: EdgeInsets.only(
-                    left: 16.0, right: 16.0, top: 30.0, bottom: 20.0),
+                    left: khorizontalPadding, right: khorizontalPadding, top: 30.0, bottom: 20.0),
                 child: Text(
                   'Recommended Furnitures',
                   style: TextStyle(

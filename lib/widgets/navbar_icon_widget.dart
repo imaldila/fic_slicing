@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-BottomNavigationBarItem navBarIcon(
-    {required String label,
-    required String icon,
-    Color? color,
-    Color? iconColor}) {
+BottomNavigationBarItem navBarIcon({
+  required String label,
+  required String icon,
+  Color? color,
+  Color? iconColor,
+}) {
   return BottomNavigationBarItem(
     label: label,
     icon: Container(
