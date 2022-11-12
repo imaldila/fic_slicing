@@ -2,6 +2,7 @@ import 'package:fic1_slicing/features/home/models/furniture.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../constants.dart';
+import '../../../../widgets/favorite_icon.dart';
 
 class FurnitureCard extends StatelessWidget {
   const FurnitureCard({
@@ -40,16 +41,7 @@ class FurnitureCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                Container(
-                  margin: const EdgeInsets.all(10),
-                  width: 34,
-                  height: 34,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: kWhiteColor,
-                  ),
-                  child: Image.asset('assets/icons/ic_heart.png'),
-                )
+                const FavoriteIcon()
               ],
             ),
           ),

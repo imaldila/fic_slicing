@@ -3,12 +3,20 @@ import 'package:fic1_slicing/features/home/views/components/furniture_card.dart'
 import 'package:fic1_slicing/features/home/models/furniture.dart';
 import 'package:flutter/material.dart';
 
+import '../../../config/app_router.dart';
 import 'components/header_menu.dart';
 import 'components/navbar_menu.dart';
 import 'components/tabbar_menu.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
+
+  static Route route() {
+    return MaterialPageRoute(
+      settings: const RouteSettings(name: Routes.home),
+      builder: (_) => const HomeView(),
+    );
+  }
 
   @override
   State<HomeView> createState() => _HomeViewState();
@@ -81,8 +89,15 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                   itemCount: Furniture.furnitures.length,
                   itemBuilder: (context, index) {
                     var furniture = Furniture.furnitures[index];
-                    return FurnitureCard(
-                      furniture: furniture,
+                    return InkWell(
+                      onTap: () => Navigator.pushNamed(
+                        context,
+                        Routes.detailFurniture,
+                        arguments: furniture,
+                      ),
+                      child: FurnitureCard(
+                        furniture: furniture,
+                      ),
                     );
                   },
                 ),

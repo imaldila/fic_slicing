@@ -1,4 +1,4 @@
-import 'package:fic1_slicing/features/home/views/home_view.dart';
+import 'package:fic1_slicing/config/app_router.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';
@@ -13,9 +13,9 @@ class App extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'Poppins',
         unselectedWidgetColor: kWhiteColor,
-        
       ),
-      home: const HomeView(),
+      onGenerateRoute: AppRouter.onGenerateRoute,
+      initialRoute: Routes.home,
     );
   }
 }
