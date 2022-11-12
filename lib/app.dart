@@ -1,4 +1,4 @@
-import 'package:fic1_slicing/views/home/home_view.dart';
+import 'package:fic1_slicing/features/home/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 import 'constants.dart';

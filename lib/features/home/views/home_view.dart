@@ -1,6 +1,6 @@
 import 'package:fic1_slicing/constants.dart';
-import 'package:fic1_slicing/views/home/components/furniture_card.dart';
-import 'package:fic1_slicing/views/home/models/furniture.dart';
+import 'package:fic1_slicing/features/home/views/components/furniture_card.dart';
+import 'package:fic1_slicing/features/home/models/furniture.dart';
 import 'package:flutter/material.dart';
 
 import 'components/header_menu.dart';

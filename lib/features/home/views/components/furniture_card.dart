@@ -1,7 +1,7 @@
-import 'package:fic1_slicing/views/home/models/furniture.dart';
+import 'package:fic1_slicing/features/home/models/furniture.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../../constants.dart';
 
 class FurnitureCard extends StatelessWidget {
   const FurnitureCard({
@@ -24,7 +24,7 @@ class FurnitureCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Flexible(
-            flex: 3,
+            flex: 4,
             child: Stack(
               children: [
                 Container(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
-import '../../../widgets/navbar_icon_widget.dart';
-import '../models/navbar_icon.dart';
+import '../../../../constants.dart';
+import '../../../../widgets/navbar_icon_widget.dart';
+import '../../models/navbar_icon.dart';
 
 class NavBarMenu extends StatelessWidget {
   const NavBarMenu({
