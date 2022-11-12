@@ -1,4 +1,6 @@
 import 'package:fic1_slicing/constants.dart';
+import 'package:fic1_slicing/views/home/components/furniture_card.dart';
+import 'package:fic1_slicing/views/home/models/furniture.dart';
 import 'package:flutter/material.dart';
 
 import 'components/header_menu.dart';
@@ -43,7 +45,8 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
             children: [
               const HeaderMenu(),
               const Padding(
-                padding: EdgeInsets.symmetric(horizontal: khorizontalPadding, vertical: 30.0),
+                padding: EdgeInsets.symmetric(
+                    horizontal: khorizontalPadding, vertical: 30.0),
                 child: Text(
                   'Discover the most modern furniture',
                   style: TextStyle(
@@ -56,7 +59,10 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
               TabBarMenu(controller: _tabController),
               const Padding(
                 padding: EdgeInsets.only(
-                    left: khorizontalPadding, right: khorizontalPadding, top: 30.0, bottom: 20.0),
+                    left: khorizontalPadding,
+                    right: khorizontalPadding,
+                    top: 30.0,
+                    bottom: 20.0),
                 child: Text(
                   'Recommended Furnitures',
                   style: TextStyle(
@@ -66,6 +72,21 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
                   ),
                 ),
               ),
+              Expanded(
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 0.8,
+                  ),
+                  itemCount: Furniture.furnitures.length,
+                  itemBuilder: (context, index) {
+                    var furniture = Furniture.furnitures[index];
+                    return FurnitureCard(
+                      furniture: furniture,
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ),
