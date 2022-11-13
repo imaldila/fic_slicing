@@ -1,4 +1,4 @@
-# fic1_slicing
+# Furniture Shop with Flutter
 
 A new Flutter project.
 
