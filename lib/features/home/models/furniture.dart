@@ -1,18 +1,18 @@
 class Furniture {
   final String name, price, description, image;
-  final bool isFavorite;
+  bool isFavorite;
   final double rating;
 
-  const Furniture({
+  Furniture({
     required this.name,
     required this.price,
     required this.description,
-    this.isFavorite = false,
+    required this.isFavorite,
     required this.rating,
     required this.image,
   });
 
-  static const List<Furniture> furnitures = [
+  static List<Furniture> furnitures = [
     Furniture(
       name: 'Stylish Chair',
       price: '\$170',
@@ -20,6 +20,7 @@ class Furniture {
           'Curabitur commodo turpis id placerat mattis. Mauris euismod arcu id orci fringilla sodales. Proin congue eleifend ipsum, eleifend porttitor mi ullamcorper.',
       rating: 4.8,
       image: 'assets/images/img1.png',
+      isFavorite: false,
     ),
     Furniture(
       name: 'Modern Table',
@@ -28,6 +29,7 @@ class Furniture {
           'Curabitur commodo turpis id placerat mattis. Mauris euismod arcu id orci fringilla sodales. Proin congue eleifend ipsum, eleifend porttitor mi ullamcorper.',
       rating: 4.9,
       image: 'assets/images/img2.png',
+      isFavorite: false,
     ),
     Furniture(
       name: 'Wooden Console',
@@ -36,6 +38,7 @@ class Furniture {
           'Curabitur commodo turpis id placerat mattis. Mauris euismod arcu id orci fringilla sodales. Proin congue eleifend ipsum, eleifend porttitor mi ullamcorper.',
       rating: 4.7,
       image: 'assets/images/img3.png',
+      isFavorite: false,
     ),
     Furniture(
       name: 'Brown Armchair',
@@ -44,6 +47,7 @@ class Furniture {
           'Curabitur commodo turpis id placerat mattis. Mauris euismod arcu id orci fringilla sodales. Proin congue eleifend ipsum, eleifend porttitor mi ullamcorper.',
       rating: 4.9,
       image: 'assets/images/img4.png',
+      isFavorite: false,
     ),
     Furniture(
       name: 'Wooden Coff',
@@ -52,6 +56,7 @@ class Furniture {
           'Curabitur commodo turpis id placerat mattis. Mauris euismod arcu id orci fringilla sodales. Proin congue eleifend ipsum, eleifend porttitor mi ullamcorper.',
       rating: 4.0,
       image: 'assets/images/img5.png',
+      isFavorite: false,
     ),
   ];
 }

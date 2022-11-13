@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../../constants.dart';
 import '../../../../widgets/favorite_icon.dart';
 
-class FurnitureCard extends StatelessWidget {
+class FurnitureCard extends StatefulWidget {
   const FurnitureCard({
     Key? key,
     required this.furniture,
@@ -15,6 +15,11 @@ class FurnitureCard extends StatelessWidget {
   final Function()? onTap;
 
   @override
+  State<FurnitureCard> createState() => _FurnitureCardState();
+}
+
+class _FurnitureCardState extends State<FurnitureCard> {
+  @override
   Widget build(BuildContext context) {
     return Container(
       margin:
@@ -24,7 +29,7 @@ class FurnitureCard extends StatelessWidget {
         color: kWhiteColor,
       ),
       child: InkWell(
-        onTap: onTap,
+        onTap: widget.onTap,
         borderRadius: BorderRadius.circular(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,7 +39,7 @@ class FurnitureCard extends StatelessWidget {
               child: Stack(
                 children: [
                   Hero(
-                    tag: furniture.image,
+                    tag: widget.furniture.image,
                     child: Container(
                       height: 163,
                       decoration: BoxDecoration(
@@ -44,12 +49,27 @@ class FurnitureCard extends StatelessWidget {
                         ),
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage(furniture.image),
+                          image: AssetImage(widget.furniture.image),
                         ),
                       ),
                     ),
                   ),
-                  const FavoriteIcon()
+                  FavoriteIcon(
+                    onTap: () {
+                      setState(() {
+                        widget.furniture.isFavorite == true
+                            ? widget.furniture.isFavorite = false
+                            : widget.furniture.isFavorite = true;
+                      });
+                    },
+                    icon: widget.furniture.isFavorite == true
+                        ? const Icon(
+                            Icons.favorite,
+                            size: 20,
+                            color: kRedColor,
+                          )
+                        : Image.asset('assets/icons/ic_heart.png'),
+                  )
                 ],
               ),
             ),
@@ -58,7 +78,7 @@ class FurnitureCard extends StatelessWidget {
                 padding: const EdgeInsets.only(
                     left: khorizontalPadding, top: 12, bottom: 5),
                 child: Text(
-                  furniture.name,
+                  widget.furniture.name,
                   style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
@@ -75,7 +95,7 @@ class FurnitureCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    furniture.price,
+                    widget.furniture.price,
                     style: const TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.w400,
@@ -92,7 +112,7 @@ class FurnitureCard extends StatelessWidget {
                       ),
                       const SizedBox(width: 8),
                       Text(
-                        '${furniture.rating}',
+                        '${widget.furniture.rating}',
                         style: const TextStyle(
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
