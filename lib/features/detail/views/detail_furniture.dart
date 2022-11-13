@@ -10,7 +10,7 @@ import 'components/furniture_quality.dart';
 import 'components/furniture_rating.dart';
 import 'components/handle_container.dart';
 
-class DetailFurniture extends StatelessWidget {
+class DetailFurniture extends StatefulWidget {
   const DetailFurniture({super.key, required this.furniture});
 
   final Furniture furniture;
@@ -22,6 +22,11 @@ class DetailFurniture extends StatelessWidget {
     );
   }
 
+  @override
+  State<DetailFurniture> createState() => _DetailFurnitureState();
+}
+
+class _DetailFurnitureState extends State<DetailFurniture> {
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -35,9 +40,9 @@ class DetailFurniture extends StatelessWidget {
             left: 0,
             right: 0,
             child: Hero(
-              tag: furniture.image,
+              tag: widget.furniture.image,
               child: Image.asset(
-                furniture.image,
+                widget.furniture.image,
                 fit: BoxFit.cover,
                 height: height * 0.6,
                 width: double.infinity,
@@ -62,8 +67,8 @@ class DetailFurniture extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const HandleContainer(),
-                  FurnitureNameAndPrice(furniture: furniture),
-                  FurnitureRating(furniture: furniture),
+                  FurnitureNameAndPrice(furniture: widget.furniture),
+                  FurnitureRating(furniture: widget.furniture),
                   const FurnitureColor(),
                   const FurnitureQuality(),
                   Padding(
@@ -133,7 +138,22 @@ class DetailFurniture extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const FavoriteIcon(),
+            FavoriteIcon(
+              onTap: () {
+                setState(() {
+                  widget.furniture.isFavorite == true
+                      ? widget.furniture.isFavorite = false
+                      : widget.furniture.isFavorite = true;
+                });
+              },
+              icon: widget.furniture.isFavorite == true
+                  ? const Icon(
+                      Icons.favorite,
+                      size: 20,
+                      color: kRedColor,
+                    )
+                  : Image.asset('assets/icons/ic_heart.png'),
+            ),
             const SizedBox(width: 7),
             SizedBox(
               height: 18,
